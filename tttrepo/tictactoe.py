@@ -27,115 +27,24 @@ These are the game board and the corresponding number tiles.\n
 - | - | -       7 | 8 | 9
 \nRemember the numbers!\n""")
 
-# EMPTY DICTIONARY
-dict1 = {1:"-", 2:"-",3:"-",4:"-",5:"-",6:"-",7:"-",8:"-",9:"-"}
+def create_board():
+    player = 0
+    x = 0
+    board_update = {}
+    board_start = {1: "-", 2: "-", 3: "-", 4: "-", 5: "-", 6: "-", 7: "-", 8: "-", 9: "-"}
+    while x == 0:
+        if player % 2 == 0:
+            board_update[int(input('Enter valid number: '))] = "X"
+        else:
+            board_update[int(input('Enter valid number: '))] = "O"
+        for i in board_update:
+            board_start[i] = board_update[i]
+        player += 1
 
-###########
-# ROUND 1 #
-###########
+        print(f"""
+        {board_start[1]} | {board_start[2]} | {board_start[3]}
+        {board_start[4]} | {board_start[5]} | {board_start[6]}
+        {board_start[7]} | {board_start[8]} | {board_start[9]}
+            """)
 
-dict1[int(input("""
-Player 1, choose a tile to place your first 'X' on.
-Enter a valid number: """))] = "X"
-
-print(f"""\n
-{dict1[1]}|{dict1[2]}|{dict1[3]}
-{dict1[4]}|{dict1[5]}|{dict1[6]}
-{dict1[7]}|{dict1[8]}|{dict1[9]}
-    \n""")
-
-dict1[int(input("""
-Player 2, choose a tile to place your first 'O' on.
-Enter a valid number: """))] = "O"
-
-print(f"""\n
-{dict1[1]}|{dict1[2]}|{dict1[3]}
-{dict1[4]}|{dict1[5]}|{dict1[6]}
-{dict1[7]}|{dict1[8]}|{dict1[9]}
-    \n""")
-
-###########
-# ROUND 2 #
-###########
-
-dict1[int(input("""
-Player 1, choose a tile to place your second 'X' on.
-Enter a valid number: """))] = "X"
-
-print(f"""\n
-{dict1[1]}|{dict1[2]}|{dict1[3]}
-{dict1[4]}|{dict1[5]}|{dict1[6]}
-{dict1[7]}|{dict1[8]}|{dict1[9]}
-    \n""")
-
-dict1[int(input("""
-Player 2, choose a tile to place your second 'O' on.
-Enter a valid number: """))] = "O"
-
-print(f"""\n
-{dict1[1]}|{dict1[2]}|{dict1[3]}
-{dict1[4]}|{dict1[5]}|{dict1[6]}
-{dict1[7]}|{dict1[8]}|{dict1[9]}
-    \n""")
-
-###########
-# ROUND 3 #
-###########
-
-dict1[int(input("""
-Player 1, choose a tile to place your third 'X' on.
-Enter a valid number: """))] = "X"
-
-print(f"""\n
-{dict1[1]}|{dict1[2]}|{dict1[3]}
-{dict1[4]}|{dict1[5]}|{dict1[6]}
-{dict1[7]}|{dict1[8]}|{dict1[9]}
-    \n""")
-
-dict1[int(input("""
-Player 2, choose a tile to place your third 'O' on.
-Enter a valid number: """))] = "O"
-
-print(f"""\n
-{dict1[1]}|{dict1[2]}|{dict1[3]}
-{dict1[4]}|{dict1[5]}|{dict1[6]}
-{dict1[7]}|{dict1[8]}|{dict1[9]}
-    \n""")
-
-###########
-# ROUND 4 #
-###########
-
-dict1[int(input("""
-Player 1, choose a tile to place your fourth 'X' on.
-Enter a valid number: """))] = "X"
-
-print(f"""\n
-{dict1[1]}|{dict1[2]}|{dict1[3]}
-{dict1[4]}|{dict1[5]}|{dict1[6]}
-{dict1[7]}|{dict1[8]}|{dict1[9]}
-    \n""")
-
-dict1[int(input("""
-Player 2, choose a tile to place your fourth 'O' on.
-Enter a valid number: """))] = "O"
-
-print(f"""\n
-{dict1[1]}|{dict1[2]}|{dict1[3]}
-{dict1[4]}|{dict1[5]}|{dict1[6]}
-{dict1[7]}|{dict1[8]}|{dict1[9]}
-    \n""")
-
-###########
-# ROUND 4 #
-###########
-
-dict1[int(input("""
-Player 1, place your 'X' on the last tile to end the game.
-Enter the last available number: """))] = "X"
-
-print(f"""\n
-{dict1[1]}|{dict1[2]}|{dict1[3]}
-{dict1[4]}|{dict1[5]}|{dict1[6]}
-{dict1[7]}|{dict1[8]}|{dict1[9]}
-    \n""")
+create_board()
