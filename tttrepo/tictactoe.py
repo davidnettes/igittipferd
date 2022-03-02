@@ -1,4 +1,4 @@
-# Project Inititalized: 18/02/2022 
+2/# Project Inititalized: 18/02/2022 
 # 21:31 
 
 # Beginning of the tictactoe.py project..
@@ -34,8 +34,10 @@ def create_board():
     board_start = {1: "-", 2: "-", 3: "-", 4: "-", 5: "-", 6: "-", 7: "-", 8: "-", 9: "-"}
     while x == 0:
         if player % 2 == 0:
+            print("Player X, its your turn: ")
             board_update[int(input('Enter valid number: '))] = "X"
         else:
+            print("Player O, its your turn: ")
             board_update[int(input('Enter valid number: '))] = "O"
         for i in board_update:
             board_start[i] = board_update[i]
